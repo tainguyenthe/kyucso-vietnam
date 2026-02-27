@@ -17,7 +17,7 @@ INSERT INTO heroes (full_name, birth_year, death_year, birth_place, era, rank, u
 ('Nguyễn Thị Minh Khai', 1910, 1941, 'Nghệ An', 'chong-phap', 'Bí thư Thành ủy', 'Thành ủy Sài Gòn - Chợ Lớn', 'Nhà cách mạng kiên cường, Bí thư Thành ủy Sài Gòn - Chợ Lớn.', 'Sinh năm 1910 tại Vinh, Nghệ An. Là một trong những nhà cách mạng tiêu biểu, hoạt động ở nhiều nước. Bị bắt và anh dũng hy sinh tại Hóc Môn ngày 28/8/1941.', 'published');
 
 -- Seed sample battlefields with panorama URLs
--- Using public equirectangular panorama images from Wikimedia Commons
+-- Using real working equirectangular panorama images for 360° viewer
 INSERT INTO battlefields (name, description, location, era, category, panorama_url, thumbnail_url, markers, status) VALUES
 (
   'Chiến trường Điện Biên Phủ',
@@ -25,8 +25,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'Điện Biên',
   'chong-phap',
   'chien-dich',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Dien_Bien_Phu_panorama.jpg/2560px-Dien_Bien_Phu_panorama.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Dien_Bien_Phu_Museum.jpg/640px-Dien_Bien_Phu_Museum.jpg',
+  'https://pannellum.org/images/alma.jpg',
+  'https://pannellum.org/images/alma.jpg',
   '[{"id":"dbp-1","longitude":0,"latitude":0,"tooltip":"Sở chỉ huy De Castries","description":"Hầm chỉ huy của tướng De Castries, nơi quân Pháp đầu hàng ngày 7/5/1954"},{"id":"dbp-2","longitude":90,"latitude":-5,"tooltip":"Đồi A1","description":"Cứ điểm quan trọng nhất, nơi diễn ra nhiều trận đánh khốc liệt nhất"},{"id":"dbp-3","longitude":180,"latitude":0,"tooltip":"Cầu Mường Thanh","description":"Cầu bắc qua sông Nậm Rốm, chứng nhân lịch sử của chiến thắng"}]',
   'published'
 ),
@@ -36,8 +36,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'TP. Hồ Chí Minh',
   'chong-my',
   'dia-dao',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Cu_Chi_tunnel_entrance.jpg/2560px-Cu_Chi_tunnel_entrance.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Cuchitunnels.jpg/640px-Cuchitunnels.jpg',
+  'https://pannellum.org/images/cerro-toco-0.jpg',
+  'https://pannellum.org/images/cerro-toco-0.jpg',
   '[{"id":"cc-1","longitude":0,"latitude":0,"tooltip":"Cửa hầm bí mật","description":"Cửa hầm được ngụy trang khéo léo giữa rừng cây"},{"id":"cc-2","longitude":120,"latitude":-10,"tooltip":"Phòng họp dưới lòng đất","description":"Nơi tổ chức các cuộc họp quan trọng của quân giải phóng"},{"id":"cc-3","longitude":240,"latitude":0,"tooltip":"Bếp Hoàng Cầm","description":"Bếp nấu ăn đặc biệt, khói được dẫn ra xa để tránh bị phát hiện"}]',
   'published'
 ),
@@ -47,8 +47,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'Quảng Trị',
   'chong-my',
   'di-tich',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Quang_Tri_Citadel.jpg/2560px-Quang_Tri_Citadel.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Thanh_co_Quang_Tri.jpg/640px-Thanh_co_Quang_Tri.jpg',
+  'https://pannellum.org/images/tocopilla.jpg',
+  'https://pannellum.org/images/tocopilla.jpg',
   '[{"id":"qt-1","longitude":0,"latitude":0,"tooltip":"Cổng thành chính","description":"Cổng thành phía Nam, nơi ghi dấu nhiều trận đánh ác liệt"},{"id":"qt-2","longitude":90,"latitude":0,"tooltip":"Đài tưởng niệm","description":"Đài tưởng niệm các chiến sĩ đã hy sinh trong 81 ngày đêm bảo vệ thành cổ"},{"id":"qt-3","longitude":200,"latitude":-5,"tooltip":"Bảo tàng thành cổ","description":"Nơi lưu giữ các hiện vật lịch sử về trận chiến bảo vệ thành cổ"}]',
   'published'
 ),
@@ -58,8 +58,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'Quảng Bình - Tây Nguyên',
   'chong-my',
   'chien-dich',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Ho_Chi_Minh_trail.jpg/2560px-Ho_Chi_Minh_trail.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Truong_Son_road.jpg/640px-Truong_Son_road.jpg',
+  'https://threejs.org/examples/textures/2294472375_24a3b8ef46_o.jpg',
+  'https://threejs.org/examples/textures/2294472375_24a3b8ef46_o.jpg',
   '[{"id":"ts-1","longitude":0,"latitude":0,"tooltip":"Km 0 - Điểm xuất phát","description":"Điểm bắt đầu của đường Trường Sơn tại Quảng Bình"},{"id":"ts-2","longitude":150,"latitude":5,"tooltip":"Ngã ba Đồng Lộc","description":"Nơi 10 nữ thanh niên xung phong đã anh dũng hy sinh"},{"id":"ts-3","longitude":270,"latitude":-5,"tooltip":"Trạm giao liên","description":"Một trong hàng trăm trạm giao liên dọc đường Trường Sơn"}]',
   'published'
 ),
@@ -69,8 +69,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'Quảng Trị',
   'chong-my',
   'tran-danh',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Khe_Sanh_Combat_Base_panorama.jpg/2560px-Khe_Sanh_Combat_Base_panorama.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Khe_Sanh_valley.jpg/640px-Khe_Sanh_valley.jpg',
+  'https://photo-sphere-viewer-data.netlify.app/assets/sphere.jpg',
+  'https://photo-sphere-viewer-data.netlify.app/assets/sphere.jpg',
   '[{"id":"ks-1","longitude":0,"latitude":0,"tooltip":"Sân bay Tà Cơn","description":"Sân bay quân sự của Mỹ tại căn cứ Khe Sanh"},{"id":"ks-2","longitude":120,"latitude":0,"tooltip":"Cao điểm 861","description":"Vị trí phòng thủ quan trọng của quân Mỹ, nơi diễn ra nhiều trận đánh"},{"id":"ks-3","longitude":240,"latitude":5,"tooltip":"Bảo tàng Khe Sanh","description":"Nơi trưng bày các hiện vật chiến tranh tại Khe Sanh"}]',
   'published'
 ),
@@ -80,8 +80,8 @@ INSERT INTO battlefields (name, description, location, era, category, panorama_u
   'Điện Biên',
   'chong-phap',
   'tran-danh',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/A1_Hill_Dien_Bien_Phu.jpg/2560px-A1_Hill_Dien_Bien_Phu.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Doi_A1.jpg/640px-Doi_A1.jpg',
+  'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-1.jpg',
+  'https://photo-sphere-viewer-data.netlify.app/assets/tour/key-biscayne-1.jpg',
   '[{"id":"a1-1","longitude":0,"latitude":0,"tooltip":"Đỉnh đồi A1","description":"Đỉnh đồi, nơi quân ta cắm cờ chiến thắng"},{"id":"a1-2","longitude":90,"latitude":-10,"tooltip":"Hố bộc phá","description":"Hố bộc phá khổng lồ do quân ta đào đường hầm và cho nổ 1 tấn thuốc nổ"},{"id":"a1-3","longitude":180,"latitude":0,"tooltip":"Chiến hào","description":"Hệ thống chiến hào bao vây cứ điểm A1"}]',
   'published'
 );
