@@ -45,8 +45,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Be Vietnam Pro', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Times New Roman', 'Times', 'serif'],
+        serif: ['Times New Roman', 'Times', 'serif'],
       },
     },
   },
