@@ -45,8 +45,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Times New Roman', 'Times', 'serif'],
-        serif: ['Times New Roman', 'Times', 'serif'],
+        sans: ['Roboto', 'system-ui', 'sans-serif'],
+        serif: ['Roboto', 'system-ui', 'sans-serif'],
       },
     },
   },
