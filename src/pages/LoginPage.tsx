@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router'
 import { useAuthStore } from '@/store/authStore'
 import { ROUTES, APP_NAME } from '@/lib/constants'
 import toast from 'react-hot-toast'
+import logoVn from '@/assets/logo-vn.jpg'
 
 export function LoginPage() {
   const [email, setEmail] = useState('')
@@ -31,9 +32,7 @@ export function LoginPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto mb-4 bg-maroon-700 rounded-full flex items-center justify-center text-gold-300 font-bold text-xl">
-            VN
-          </div>
+          <img src={logoVn} alt="Logo" className="w-16 h-16 mx-auto mb-4 rounded-full object-cover" />
           <h1 className="font-serif text-2xl font-bold text-maroon-800">{APP_NAME}</h1>
           <p className="mt-1 text-maroon-600">Đăng nhập tài khoản</p>
         </div>

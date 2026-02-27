@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useAuthStore } from '@/store/authStore'
 import { APP_NAME, ROUTES } from '@/lib/constants'
 import { cn } from '@/lib/utils'
+import logoVn from '@/assets/logo-vn.jpg'
 
 const navLinks = [
   { to: ROUTES.HOME, label: 'Trang chủ' },
@@ -22,9 +23,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center text-maroon-900 font-bold text-lg">
-              VN
-            </div>
+            <img src={logoVn} alt="Logo" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-serif text-xl font-bold hidden sm:block">{APP_NAME}</span>
           </Link>
 

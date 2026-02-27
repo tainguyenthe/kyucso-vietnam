@@ -3,6 +3,7 @@ import { Users, BookOpen, Map, Shield, Home, ChevronLeft } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ROUTES, APP_NAME } from '@/lib/constants'
 import { useUiStore } from '@/store/uiStore'
+import logoVn from '@/assets/logo-vn.jpg'
 
 const sidebarLinks = [
   { to: ROUTES.ADMIN, label: 'Tổng quan', icon: Home },
@@ -29,9 +30,7 @@ export function AdminSidebar() {
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-maroon-800">
           <Link to={ROUTES.ADMIN} className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gold-400 rounded-full flex items-center justify-center text-maroon-900 font-bold text-sm">
-              VN
-            </div>
+            <img src={logoVn} alt="Logo" className="w-8 h-8 rounded-full object-cover" />
             <span className="font-serif font-bold text-sm">{APP_NAME}</span>
           </Link>
           <button onClick={toggleSidebar} className="lg:hidden p-1 hover:bg-maroon-800 rounded">

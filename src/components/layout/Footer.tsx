@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { APP_NAME } from '@/lib/constants'
+import logoVn from '@/assets/logo-vn.jpg'
 
 export function Footer() {
   return (
@@ -8,9 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center text-maroon-900 font-bold text-lg">
-                VN
-              </div>
+              <img src={logoVn} alt="Logo" className="w-10 h-10 rounded-full object-cover" />
               <span className="font-serif text-xl font-bold text-white">{APP_NAME}</span>
             </div>
             <p className="text-sm text-maroon-300 leading-relaxed">
