@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-maroon-200;
-  }
   body {
     @apply bg-maroon-50 text-maroon-950 antialiased;
     font-family: 'Be Vietnam Pro', system-ui, sans-serif;

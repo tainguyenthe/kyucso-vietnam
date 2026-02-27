@@ -39,38 +39,40 @@ export function AdminSidebar() {
           </button>
         </div>
 
-        <nav className="p-4 space-y-1">
-          {sidebarLinks.map((link) => {
-            const Icon = link.icon
-            const isActive = location.pathname === link.to ||
-              (link.to !== ROUTES.ADMIN && location.pathname.startsWith(link.to))
-            return (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => useUiStore.getState().setSidebarOpen(false)}
-                className={cn(
-                  'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
-                  isActive
-                    ? 'bg-maroon-700 text-gold-300'
-                    : 'text-maroon-300 hover:bg-maroon-800 hover:text-white'
-                )}
-              >
-                <Icon className="w-5 h-5" />
-                {link.label}
-              </Link>
-            )
-          })}
-        </nav>
+        <div className="flex flex-col justify-between h-[calc(100%-4rem)]">
+          <nav className="p-4 space-y-1">
+            {sidebarLinks.map((link) => {
+              const Icon = link.icon
+              const isActive = location.pathname === link.to ||
+                (link.to !== ROUTES.ADMIN && location.pathname.startsWith(link.to))
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => useUiStore.getState().setSidebarOpen(false)}
+                  className={cn(
+                    'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+                    isActive
+                      ? 'bg-maroon-700 text-gold-300'
+                      : 'text-maroon-300 hover:bg-maroon-800 hover:text-white'
+                  )}
+                >
+                  <Icon className="w-5 h-5" />
+                  {link.label}
+                </Link>
+              )
+            })}
+          </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-maroon-800">
-          <Link
-            to={ROUTES.HOME}
-            className="flex items-center gap-2 text-sm text-maroon-400 hover:text-white transition-colors"
-          >
-            <Home className="w-4 h-4" />
-            Về trang chủ
-          </Link>
+          <div className="p-4 border-t border-maroon-800">
+            <Link
+              to={ROUTES.HOME}
+              className="flex items-center gap-2 text-sm text-maroon-400 hover:text-white transition-colors"
+            >
+              <Home className="w-4 h-4" />
+              Về trang chủ
+            </Link>
+          </div>
         </div>
       </aside>
     </>
