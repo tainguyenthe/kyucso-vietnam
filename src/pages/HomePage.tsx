@@ -2,7 +2,6 @@ import { Search, Map, BookOpen, Users } from 'lucide-react'
 import { SearchBar } from '@/components/common/SearchBar'
 import { FeatureCard } from '@/components/common/FeatureCard'
 import { APP_NAME } from '@/lib/constants'
-import logoVn from '@/assets/logo-vn.jpg'
 
 const features = [
   {
@@ -38,7 +37,6 @@ export function HomePage() {
       <section className="relative bg-gradient-to-b from-maroon-800 via-maroon-700 to-sunset-700 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
-          <img src={logoVn} alt="Logo" className="w-20 h-20 mx-auto mb-6 rounded-full object-cover shadow-lg" />
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             {APP_NAME}
           </h1>
