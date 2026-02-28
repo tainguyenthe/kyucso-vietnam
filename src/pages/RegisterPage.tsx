@@ -25,7 +25,12 @@ export function RegisterPage() {
       toast.success('Đăng ký thành công!')
       navigate(ROUTES.HOME, { replace: true })
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Đăng ký thất bại')
+      const message = err instanceof Error ? err.message : ''
+      if (message.includes('email_send_rate_limit') || message.includes('rate_limit')) {
+        toast.error('Vui lòng đợi một phút trước khi thử lại')
+      } else {
+        toast.error(message || 'Đăng ký thất bại')
+      }
     } finally {
       setLoading(false)
     }

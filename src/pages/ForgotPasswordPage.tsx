@@ -19,7 +19,12 @@ export function ForgotPasswordPage() {
       setSent(true)
       toast.success('Vui lòng kiểm tra email để đặt lại mật khẩu')
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Gửi yêu cầu thất bại')
+      const message = err instanceof Error ? err.message : ''
+      if (message.includes('email_send_rate_limit') || message.includes('rate_limit')) {
+        toast.error('Vui lòng đợi một phút trước khi gửi lại')
+      } else {
+        toast.error(message || 'Gửi yêu cầu thất bại')
+      }
     } finally {
       setLoading(false)
     }
