@@ -22,8 +22,8 @@ export function RegisterPage() {
     setLoading(true)
     try {
       await signUp(email, password, fullName)
-      toast.success('Đăng ký thành công! Vui lòng kiểm tra email để xác thực.')
-      navigate(ROUTES.LOGIN)
+      toast.success('Đăng ký thành công!')
+      navigate(ROUTES.HOME, { replace: true })
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Đăng ký thất bại')
     } finally {
