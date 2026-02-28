@@ -43,4 +43,5 @@ export const ROUTES = {
   ADMIN_BATTLEFIELD_CREATE: '/admin/chien-truong/tao-moi',
   ADMIN_BATTLEFIELD_EDIT: '/admin/chien-truong/:id/chinh-sua',
   ADMIN_USERS: '/admin/nguoi-dung',
+  ADMIN_USER_EDIT: '/admin/nguoi-dung/:id/chinh-sua',
 } as const

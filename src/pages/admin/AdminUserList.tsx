@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Trash2 } from 'lucide-react'
+import { Link } from 'react-router'
+import { Edit, Trash2 } from 'lucide-react'
 import { getAllUsers, deleteUser } from '@/services/userService'
 import { formatDate } from '@/lib/utils'
 import type { Profile } from '@/types/database'
@@ -74,6 +75,13 @@ export function AdminUserList() {
                     <td className="px-4 py-3 text-maroon-600">{formatDate(user.created_at)}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-1">
+                        <Link
+                          to={`/admin/nguoi-dung/${user.id}/chinh-sua`}
+                          className="p-1.5 rounded hover:bg-maroon-100 text-maroon-500 hover:text-maroon-700 transition-colors"
+                          title="Sửa"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </Link>
                         <button
                           onClick={() => handleDelete(user.id, user.full_name ?? user.email)}
                           className="p-1.5 rounded hover:bg-red-100 text-maroon-500 hover:text-red-600 transition-colors"
