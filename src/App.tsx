@@ -5,6 +5,9 @@ import { PublicLayout } from '@/components/layout/PublicLayout'
 import { AdminLayout } from '@/components/layout/AdminLayout'
 import { useAuthStore } from '@/store/authStore'
 
+// Auth / layout
+import { ProtectedRoute } from '@/components/auth/ProtectedRoute'
+
 // Eager-loaded pages (critical path)
 import { HomePage } from '@/pages/HomePage'
 import { LoginPage } from '@/pages/LoginPage'
@@ -18,6 +21,9 @@ const BattlefieldDetailPage = lazy(() => import('@/pages/BattlefieldDetailPage')
 const MemoryListPage = lazy(() => import('@/pages/MemoryListPage').then(m => ({ default: m.MemoryListPage })))
 const MemoryDetailPage = lazy(() => import('@/pages/MemoryDetailPage').then(m => ({ default: m.MemoryDetailPage })))
 const MemoryCreatePage = lazy(() => import('@/pages/MemoryCreatePage').then(m => ({ default: m.MemoryCreatePage })))
+const ForgotPasswordPage = lazy(() => import('@/pages/ForgotPasswordPage').then(m => ({ default: m.ForgotPasswordPage })))
+const ResetPasswordPage = lazy(() => import('@/pages/ResetPasswordPage').then(m => ({ default: m.ResetPasswordPage })))
+const ChangePasswordPage = lazy(() => import('@/pages/ChangePasswordPage').then(m => ({ default: m.ChangePasswordPage })))
 
 // Admin pages
 const AdminDashboard = lazy(() => import('@/pages/admin/AdminDashboard').then(m => ({ default: m.AdminDashboard })))
@@ -64,6 +70,9 @@ export default function App() {
             <Route path="chia-se-ky-uc/:id" element={<MemoryDetailPage />} />
             <Route path="dang-nhap" element={<LoginPage />} />
             <Route path="dang-ky" element={<RegisterPage />} />
+            <Route path="quen-mat-khau" element={<ForgotPasswordPage />} />
+            <Route path="dat-lai-mat-khau" element={<ResetPasswordPage />} />
+            <Route path="doi-mat-khau" element={<ProtectedRoute><ChangePasswordPage /></ProtectedRoute>} />
           </Route>
 
           {/* Admin routes */}

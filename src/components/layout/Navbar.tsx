@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router'
-import { Menu, X, Search, User, LogOut } from 'lucide-react'
+import { Menu, X, Search, User, LogOut, KeyRound } from 'lucide-react'
 import { useState } from 'react'
 import { useAuthStore } from '@/store/authStore'
 import { APP_NAME, ROUTES } from '@/lib/constants'
@@ -63,6 +63,13 @@ export function Navbar() {
                     Admin
                   </Link>
                 )}
+                <Link
+                  to={ROUTES.CHANGE_PASSWORD}
+                  className="p-2 rounded-lg hover:bg-maroon-600 transition-colors"
+                  aria-label="Đổi mật khẩu"
+                >
+                  <KeyRound className="w-5 h-5" />
+                </Link>
                 <Link to={ROUTES.ADMIN} className="p-2 rounded-lg hover:bg-maroon-600 transition-colors">
                   <User className="w-5 h-5" />
                 </Link>
