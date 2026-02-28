@@ -1,4 +1,4 @@
-export const APP_NAME = 'Ký Ức Số Quốc Gia'
+export const APP_NAME = 'KÍ ỨC SỐ LỊCH SỬ VIỆT NAM'
 export const APP_DESCRIPTION = 'Nền tảng số hóa ký ức chiến tranh Việt Nam'
 
 export const ERAS = [
