@@ -47,3 +47,19 @@ export async function updateBattlefield(id: string, updates: Partial<Battlefield
   if (error) throw error
   return data as Battlefield
 }
+
+export async function getAllBattlefields(page = 1, limit = 20) {
+  const from = (page - 1) * limit
+  const { data, count, error } = await supabase
+    .from('battlefields')
+    .select('*', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, from + limit - 1)
+  if (error) throw error
+  return { battlefields: data as Battlefield[], total: count ?? 0 }
+}
+
+export async function deleteBattlefield(id: string) {
+  const { error } = await supabase.from('battlefields').delete().eq('id', id)
+  if (error) throw error
+}

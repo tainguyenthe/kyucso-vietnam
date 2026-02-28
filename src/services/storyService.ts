@@ -64,3 +64,8 @@ export async function getAllStories(page = 1, limit = 20) {
   if (error) throw error
   return { stories: data as Story[], total: count ?? 0 }
 }
+
+export async function deleteStory(id: string) {
+  const { error } = await supabase.from('stories').delete().eq('id', id)
+  if (error) throw error
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Check, X, Eye } from 'lucide-react'
-import { getAllStories, updateStory } from '@/services/storyService'
+import { Check, X, Eye, Trash2 } from 'lucide-react'
+import { getAllStories, updateStory, deleteStory } from '@/services/storyService'
 import { formatDate, truncate } from '@/lib/utils'
 import type { Story } from '@/types/database'
 import toast from 'react-hot-toast'
@@ -20,6 +20,17 @@ export function AdminStoryList() {
   }
 
   useEffect(fetchStories, [page])
+
+  const handleDelete = async (id: string, title: string) => {
+    if (!confirm(`Xóa "${title}"?`)) return
+    try {
+      await deleteStory(id)
+      toast.success('Đã xóa')
+      fetchStories()
+    } catch {
+      toast.error('Lỗi khi xóa')
+    }
+  }
 
   const handleStatusChange = async (id: string, status: 'published' | 'rejected') => {
     try {
@@ -96,6 +107,10 @@ export function AdminStoryList() {
                               </button>
                             </>
                           )}
+                          <button onClick={() => handleDelete(story.id, story.title)}
+                            className="p-1.5 rounded hover:bg-red-100 text-maroon-500 hover:text-red-600 transition-colors" title="Xóa">
+                            <Trash2 className="w-4 h-4" />
+                          </button>
                         </div>
                       </td>
                     </tr>
