@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react'
 import type { BattlefieldMarker } from '@/types/database'
+import '@photo-sphere-viewer/core/index.css'
+import '@photo-sphere-viewer/markers-plugin/index.css'
+import '@photo-sphere-viewer/compass-plugin/index.css'
 
 interface PanoramaViewerProps {
   panoramaUrl: string
