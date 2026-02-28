@@ -40,5 +40,7 @@ export const ROUTES = {
   ADMIN_HERO_EDIT: '/admin/anh-hung/:id/chinh-sua',
   ADMIN_STORIES: '/admin/ky-uc',
   ADMIN_BATTLEFIELDS: '/admin/chien-truong',
+  ADMIN_BATTLEFIELD_CREATE: '/admin/chien-truong/tao-moi',
+  ADMIN_BATTLEFIELD_EDIT: '/admin/chien-truong/:id/chinh-sua',
   ADMIN_USERS: '/admin/nguoi-dung',
 } as const

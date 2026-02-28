@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Trash2 } from 'lucide-react'
+import { Link } from 'react-router'
+import { Plus, Edit, Trash2 } from 'lucide-react'
 import { getAllBattlefields, deleteBattlefield } from '@/services/battlefieldService'
+import { ROUTES } from '@/lib/constants'
 import type { Battlefield } from '@/types/database'
 import toast from 'react-hot-toast'
 
@@ -33,7 +35,16 @@ export function AdminBattlefieldList() {
 
   return (
     <div>
-      <h2 className="font-serif text-2xl font-bold text-maroon-800 mb-6">Quản lý chiến trường</h2>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="font-serif text-2xl font-bold text-maroon-800">Quản lý chiến trường</h2>
+        <Link
+          to={ROUTES.ADMIN_BATTLEFIELD_CREATE}
+          className="flex items-center gap-2 px-4 py-2 bg-maroon-700 text-white rounded-lg text-sm font-medium hover:bg-maroon-600 transition-colors"
+        >
+          <Plus className="w-4 h-4" />
+          Thêm mới
+        </Link>
+      </div>
 
       <div className="bg-white rounded-xl border border-maroon-200 overflow-hidden">
         <div className="overflow-x-auto">
@@ -73,6 +84,13 @@ export function AdminBattlefieldList() {
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center justify-end gap-1">
+                        <Link
+                          to={`/admin/chien-truong/${bf.id}/chinh-sua`}
+                          className="p-1.5 rounded hover:bg-maroon-100 text-maroon-500 hover:text-maroon-700 transition-colors"
+                          title="Sửa"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </Link>
                         <button
                           onClick={() => handleDelete(bf.id, bf.name)}
                           className="p-1.5 rounded hover:bg-red-100 text-maroon-500 hover:text-red-600 transition-colors"

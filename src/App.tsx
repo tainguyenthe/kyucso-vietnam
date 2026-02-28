@@ -31,6 +31,7 @@ const AdminHeroList = lazy(() => import('@/pages/admin/AdminHeroList').then(m =>
 const AdminHeroForm = lazy(() => import('@/pages/admin/AdminHeroForm').then(m => ({ default: m.AdminHeroForm })))
 const AdminStoryList = lazy(() => import('@/pages/admin/AdminStoryList').then(m => ({ default: m.AdminStoryList })))
 const AdminBattlefieldList = lazy(() => import('@/pages/admin/AdminBattlefieldList').then(m => ({ default: m.AdminBattlefieldList })))
+const AdminBattlefieldForm = lazy(() => import('@/pages/admin/AdminBattlefieldForm').then(m => ({ default: m.AdminBattlefieldForm })))
 const AdminUserList = lazy(() => import('@/pages/admin/AdminUserList').then(m => ({ default: m.AdminUserList })))
 
 function PageLoader() {
@@ -83,6 +84,8 @@ export default function App() {
             <Route path="anh-hung/:id/chinh-sua" element={<AdminHeroForm />} />
             <Route path="ky-uc" element={<AdminStoryList />} />
             <Route path="chien-truong" element={<AdminBattlefieldList />} />
+            <Route path="chien-truong/tao-moi" element={<AdminBattlefieldForm />} />
+            <Route path="chien-truong/:id/chinh-sua" element={<AdminBattlefieldForm />} />
             <Route path="nguoi-dung" element={<AdminUserList />} />
           </Route>
         </Routes>
